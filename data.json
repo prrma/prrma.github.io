@@ -1,10 +1,18 @@
 { "towns":
 	[
   		{
-  			"organization": "Hatfield Town Hall",
+  			"town": "Hatfield",
+			"organization": "Hatfield Town Hall",
 			"contact": "LSzych@townofhatfield.org",
 			"full_name": "Lydia Szych",
-			"first_name": "Lydia" 
+			"short_name": "Lydia" 
+		},
+  		{
+  			"town": "Northampton",
+			"organization": "Northampton Town Hall",
+			"contact": "cclerk@northamptonma.gov",
+			"full_name": "Pamela L. Powers",
+			"short_name": "Pamela" 
 		}
 	]
 }
