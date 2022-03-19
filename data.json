@@ -3,6 +3,7 @@
   		{
   			"town": "Hatfield",
 			"organization": "Hatfield Town Hall",
+			"position": "City Clerk",
 			"contact": "LSzych@townofhatfield.org",
 			"full_name": "Lydia Szych",
 			"short_name": "Lydia" 
@@ -10,9 +11,21 @@
   		{
   			"town": "Northampton",
 			"organization": "City Clerk's Office",
+			"position": "City Clerk",
 			"contact": "cclerk@northamptonma.gov",
 			"full_name": "Pamela L. Powers",
 			"short_name": "Pamela" 
+		}
+	],
+ "police":
+ 	[
+  		{
+  			"town": "Northampton",
+			"organization": "Police Department",
+			"position": "Supervisor of Records",
+			"contact": "jlawnicki@northamptonma.gov",
+			"full_name": "Jane Lawnicki",
+			"short_name": "Jane" 
 		}
 	]
 }
