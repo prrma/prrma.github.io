@@ -26,7 +26,7 @@
   </div>
      
   <div class="mb-3">
-    <input type="email" class="form-control" id="subject" value="Public Records Request>
+    <input type="email" class="form-control" id="subject" value="Public Records Request" onchange="constructMailto();">
   </div>
 
   <div class="mb-3">
@@ -42,10 +42,14 @@
   
  <script>
                                                                
-   function constructMailto(){ };
-                                         
-                                                                                                             
-                                                               
+   function constructMailto(){ 
+   
+     console.log("hello");
+     
+   };
+   
+  </script>
+                                                                         
  </body>
  
- </html>
+</html>
