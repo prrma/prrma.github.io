@@ -1,0 +1,10 @@
+{ "towns":
+	[
+  		{
+  			"organization": "Hatfield Town Hall",
+			"contact": "LSzych@townofhatfield.org",
+			"full_name": "Lydia Szych",
+			"first_name": "Lydia" 
+		}
+	]
+}
