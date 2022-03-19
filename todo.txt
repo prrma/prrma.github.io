@@ -1,0 +1,8 @@
+TODO
+---
+
+* build data.json file with template variables
+* build multiple select option that reads from data.json
+* build more textarea elements with additional parts of request
+* build filter select based on context
+* change mailto based on field inputs
