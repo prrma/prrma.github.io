@@ -88,5 +88,14 @@
 		"email": "anniethompson@northampton-k12.us",
 		"full_name": "Annie Thompson",
 		"short_name": "Annie" 
+	},
+	{
+		"category": "town",
+		"town": "Whately",
+		"organization": "Town Offices",
+		"position": "Town Clerk",
+		"email": "townclerk@whately.org",
+		"full_name": "Amy Schrader",
+		"short_name": "Amy" 
 	}
 ]
