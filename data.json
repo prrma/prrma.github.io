@@ -1,6 +1,15 @@
 [
 	{
 		"category": "town",
+		"town": "Amherst",
+		"organization": "Town Hall",
+		"position": "City Clerk",
+		"email": "townclerk@amherstma.gov",
+		"full_name": "Amber Martin",
+		"short_name": "Amber" 
+	},
+	{
+		"category": "town",
 		"town": "Easthampton",
 		"organization": "Town Hall",
 		"position": "City Clerk",
