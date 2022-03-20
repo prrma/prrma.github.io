@@ -99,7 +99,7 @@
      entryNumber = document.getElementById("select").value;
      let today = new Date().toLocaleDateString()
      document.getElementById("to").value = formData[0][entryNumber].email;
-     document.getElementById("salutation").value = formData[0][entryNumber].short_name + ",";
+     document.getElementById("salutation").value = formData[0][entryNumber].short_name + ", I believe you are the right person to address this email to, but if I am wrong please forward to the appropriate Public Records Officer for the {organization}.\r\n\r\n I am writing with a request under the Massachusetts Public Records Law (M. G. L. Chapter 66, Section 10). I am requesting that I be provide a copy of the following records:";
      document.getElementById("subject").value = "Public Records Request " + today;
      document.getElementById("closing").value = "Sincerely,";
      constructMailto();
