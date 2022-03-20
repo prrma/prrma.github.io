@@ -37,7 +37,7 @@
   
   <div class="mb-3">
     <label for="select" class="form-label">Public Records Request</label>
-    <select id="select" class="form-select"></select>
+    <select id="select" class="form-select" onchange="constructBoilerplate();"></select>
   </div>
     
   <div class="mb-3">
@@ -81,7 +81,7 @@
      data.forEach(
        (entry,index) => {
          option = document.createElement("option");
-         option.text = entry.email;
+         option.text = entry.town + " " + entry.organization;
          option.value = index;
          select.add(option);
        }
@@ -89,9 +89,10 @@
      
    };
    
-   function constructBoilerplate(option){
+   function constructBoilerplate(){
      
-     short_name = formData[option].short_name;   
+     entryNumber = document.getElementById("select").value;
+     document.getElementById("to").value = formData[entryNumber];
      
    };
                                                                
