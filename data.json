@@ -19,6 +19,15 @@
 	},
 	{
 		"category": "town",
+		"town": "Hadley",
+		"organization": "Town Hall",
+		"position": "Town Clerk",
+		"email": "clerk@hadleyma.org",
+		"full_name": "Jessica Spanknabel",
+		"short_name": "Jessica" 
+	},
+	{
+		"category": "town",
 		"town": "Hatfield",
 		"organization": "Town Hall",
 		"position": "City Clerk",
