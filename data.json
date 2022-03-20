@@ -43,5 +43,14 @@
 		"email": "jlawnicki@northamptonma.gov",
 		"full_name": "Jane Lawnicki",
 		"short_name": "Jane" 
+	},
+	{
+		"category": "school",
+		"town": "Northampton",
+		"organization": "Public Schools",
+		"position": "School Committee Clerk",
+		"email": "anniethompson@northampton-k12.us",
+		"full_name": "Annie Thompson",
+		"short_name": "Annie" 
 	}
 ]
