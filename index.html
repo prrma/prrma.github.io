@@ -36,30 +36,36 @@
   <form>
   
   <div class="mb-3">
+    <label for="select" class="form-label">Public Records Request</label>
     <select id="select" class="form-select"></select>
   </div>
     
   <div class="mb-3">
+    <label for="to" class="form-label">To</label>
     <input type="email" class="form-control" id="to" value="jeffehobbs@gmail.com" oninput="constructMailto();">
   </div>
      
   <div class="mb-3">
+    <label for="subject" class="form-label">Subject</label>
     <input type="email" class="form-control" id="subject" value="Public Records Request" oninput="constructMailto();">
   </div>
 
   <div class="mb-3">
-      <textarea class="form-control" id="prefix" rows="3" oninput="constructMailto();">Dear,</textarea>
+    <label for="intro" class="form-label">Intro</label>
+      <textarea class="form-control" id="intro" rows="3" oninput="constructMailto();">Dear,</textarea>
   </div>
     
   <div class="mb-3">
+    <label for="request" class="form-label">Request body</label>
       <textarea class="form-control" id="request" rows="3" oninput="constructMailto();">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus nisl quis eros vulputate venenatis. Morbi aliquam velit maximus est faucibus maximus. Curabitur bibendum sit amet lorem eu auctor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</textarea>
   </div>
 
   <div class="mb-3">
-      <textarea class="form-control" id="suffix" rows="3" oninput="constructMailto();">Sincerely,</textarea>
+    <label for="outro" class="form-label">Outro</label>
+      <textarea class="form-control" id="outro" rows="3" oninput="constructMailto();">Sincerely,</textarea>
   </div>
     
-  <a id="submitButton" href="mailto:jeffehobbs@gmail.com" class="btn btn-primary">Submit</a>
+  <a id="submitButton" href="mailto:jeffehobbs@gmail.com" class="btn btn-primary btn-block">Submit</a>
      
   </form>
        
@@ -92,10 +98,10 @@
 
      to = document.getElementById("to").value;
      subject = encodeURIComponent(document.getElementById("subject").value);
-     prefix = document.getElementById("prefix").value;
+     intro = document.getElementById("intro").value;
      request = document.getElementById("request").value;
-     suffix = document.getElementById("suffix").value;
-     body = encodeURIComponent(prefix + "\r\n" + request + "\r\n" + suffix);
+     outro = document.getElementById("suffix").value;
+     body = encodeURIComponent(intro + "\r\n" + request + "\r\n" + outro);
      mailtoString = "mailto:" + to + "?subject=" + subject + "&body=" + body;
      
      var mailto = document.getElementById("submitButton");
