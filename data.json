@@ -91,6 +91,15 @@
 	},
 	{
 		"category": "town",
+		"town": "Sunderland",
+		"organization": "Town Hall",
+		"position": "Town Clerk",
+		"email": "fuckingunclear@sunderland.org.or.whatever",
+		"full_name": "Wendy Houle",
+		"short_name": "Wendy" 
+	},
+	{
+		"category": "town",
 		"town": "Whately",
 		"organization": "Town Offices",
 		"position": "Town Clerk",
