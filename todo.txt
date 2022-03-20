@@ -1,9 +1,0 @@
-TODO
----
-
-* build data.json file with template variables
-* build select option that reads from data.json array
-* build more textarea elements with additional parts of request
-* build filter select based on context
-* change mailto based on field inputs
-* add Google Calendar link for 10-day tickler
