@@ -79,9 +79,10 @@
      
      var select = document.getElementById('select');
      data.forEach(
-       entry => {
+       (entry,index) => {
          option = document.createElement("option");
          option.text = entry.email;
+         option.value = index;
          select.add(option);
        }
      );
