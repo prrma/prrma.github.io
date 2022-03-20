@@ -82,7 +82,9 @@
    function constructSelect(){
      
      var selectElement = document.getElementById('select-recipient');
-     formData.forEach(entry => selectElement.add(new Option(entry.email)););
+     formData.forEach(
+       entry => selectElement.add(new Option(entry.email))
+     );
      
    };
    
