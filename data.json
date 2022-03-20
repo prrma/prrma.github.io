@@ -1,31 +1,29 @@
-{ "towns":
-	[
-  		{
-  			"town": "Hatfield",
-			"organization": "Hatfield Town Hall",
-			"position": "City Clerk",
-			"email": "LSzych@townofhatfield.org",
-			"full_name": "Lydia Szych",
-			"short_name": "Lydia" 
-		},
-  		{
-  			"town": "Northampton",
-			"organization": "City Clerk's Office",
-			"position": "City Clerk",
-			"email": "cclerk@northamptonma.gov",
-			"full_name": "Pamela L. Powers",
-			"short_name": "Pamela" 
-		}
-	],
- "police":
- 	[
-  		{
-  			"town": "Northampton",
-			"organization": "Police Department",
-			"position": "Supervisor of Records",
-			"email": "jlawnicki@northamptonma.gov",
-			"full_name": "Jane Lawnicki",
-			"short_name": "Jane" 
-		}
-	]
-}
+[
+	{
+		"category": "town",
+		"town": "Hatfield",
+		"organization": "Hatfield Town Hall",
+		"position": "City Clerk",
+		"email": "LSzych@townofhatfield.org",
+		"full_name": "Lydia Szych",
+		"short_name": "Lydia" 
+	},
+	{
+		"category": "town",
+		"town": "Northampton",
+		"organization": "City Clerk's Office",
+		"position": "City Clerk",
+		"email": "cclerk@northamptonma.gov",
+		"full_name": "Pamela L. Powers",
+		"short_name": "Pamela" 
+	},
+	{
+		"category": "police",
+		"town": "Northampton",
+		"organization": "Police Department",
+		"position": "Supervisor of Records",
+		"email": "jlawnicki@northamptonma.gov",
+		"full_name": "Jane Lawnicki",
+		"short_name": "Jane" 
+	}
+]
