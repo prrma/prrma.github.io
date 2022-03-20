@@ -67,7 +67,12 @@
     <label for="closing" class="form-label text-muted">Closing</label>
       <textarea class="form-control form-control-sm" id="closing" rows="7" oninput="constructMailto();"></textarea>
   </div>
-  
+
+  <div class="mb-3">
+    <label for="name" class="form-label text-muted">Your Name</label>
+      <textarea class="form-control form-control-sm" id="name" rows="3" oninput="constructMailto();"></textarea>
+  </div>
+    
   <div class="d-grid gap-2">
     <a id="submitButton" href="" class="btn btn-primary">Submit</a>
   </div>
@@ -101,7 +106,7 @@
      document.getElementById("to").value = formData[0][entryNumber].email;
      document.getElementById("salutation").value = formData[0][entryNumber].short_name + ",\r\n\r\nI believe you are the right person to address this email to, but if I am wrong please forward to the appropriate Public Records Officer for the " + formData[0][entryNumber].town + " " + formData[0][entryNumber].organization + ".\r\n\r\nI am writing with a request under the Massachusetts Public Records Law (M. G. L. Chapter 66, Section 10). I am requesting that I be provide a copy of the following records:";
      document.getElementById("subject").value = "Public Records Request " + today;
-     document.getElementById("closing").value = "I recognize that you may charge reasonable costs for copies, as well as for personnel time needed to comply with this request. I am fine with receiving either hard copies or .pdf versions of the requested information, although for accessibilty reasons the original form of the document (text, csv, excel) is always preferable./r/n/r/nThe Public Records Law requires you to provide me with a written response within 10 business days. If you cannot comply with my request, you are statutorily required to provide an explanation in writing.\r\n\r\nSincerely,";
+     document.getElementById("closing").value = "I recognize that you may charge reasonable costs for copies, as well as for personnel time needed to comply with this request. I am fine with receiving either hard copies or .pdf versions of the requested information, although for accessibilty reasons the original form of the document (text, csv, excel) is always preferable.\r\n\r\nThe Public Records Law requires you to provide me with a written response within 10 business days. If you cannot comply with my request, you are statutorily required to provide an explanation in writing.\r\n\r\nSincerely,";
      constructMailto();
      
    };
@@ -110,10 +115,11 @@
 
      to = document.getElementById("to").value;
      subject = encodeURIComponent(document.getElementById("subject").value);
-     intro = document.getElementById("salutation").value;
+     salutation = document.getElementById("salutation").value;
      request = document.getElementById("request").value;
-     outro = document.getElementById("closing").value;
-     body = encodeURIComponent(intro + "\r\n\r\n" + request + "\r\n\r\n" + outro);
+     closing = document.getElementById("closing").value;
+     name = document.getElementById("name").value;
+     body = encodeURIComponent(salutation + "\r\n\r\n" + request + "\r\n\r\n" + closing + "\r\n\r\n" + name);
      mailtoString = "mailto:" + to + "?subject=" + subject + "&body=" + body;
      
      var mailto = document.getElementById("submitButton");
