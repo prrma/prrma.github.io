@@ -40,7 +40,15 @@
   </div>
 
   <div class="mb-3">
-      <textarea class="form-control" id="body" rows="3" onkeydown="constructMailto();">lorem ipsum</textarea>
+      <textarea class="form-control" id="prefix" rows="3" onkeydown="constructMailto();">lorem ipsum</textarea>
+  </div>
+    
+  <div class="mb-3">
+      <textarea class="form-control" id="request" rows="3" onkeydown="constructMailto();">lorem ipsum</textarea>
+  </div>
+
+  <div class="mb-3">
+      <textarea class="form-control" id="suffix" rows="3" onkeydown="constructMailto();">lorem ipsum</textarea>
   </div>
     
   <a id="submitButton" href="mailto:jeffehobbs@gmail.com" class="btn btn-primary">Submit</a>
@@ -54,9 +62,17 @@
  <script>
                                                                
    function constructMailto(){ 
-   
-     console.log("hello");
+
+     to = document.getElementById("to").value;
+     subject = encodeURIComponent(document.getElementById("subject").value);
+     prefix = document.getElementById("prefix").value;
+     request = document.getElementById("request").value;
+     suffix = document.getElementById("suffix").value;
+     body = encodeURIComponent(prefix + request + suffix);
      
+     var mailto = document.getElementById("submitButton");
+     mailto.href = "mailto:" + to + "&subject=" + subject + "&body=" + body;
+
    };
    
   </script>
