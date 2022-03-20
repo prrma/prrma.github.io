@@ -27,6 +27,15 @@
 		"short_name": "Laura" 
 	},
 	{
+		"category": "town",
+		"town": "Northampton",
+		"organization": "Finance Division",
+		"position": "Finance Director",
+		"email": "cnardi@northamptonma.gov",
+		"full_name": "Charlene Nardi",
+		"short_name": "Charlene" 
+	},
+	{
 		"category": "police",
 		"town": "Northampton",
 		"organization": "Police Department",
