@@ -64,7 +64,7 @@
   </div>
 
   <div class="mb-3">
-    <label for="outro" class="form-label text-muted">Outro</label>
+    <label for="closing" class="form-label text-muted">Closing</label>
       <textarea class="form-control" id="outro" rows="3" oninput="constructMailto();"></textarea>
   </div>
   
@@ -101,7 +101,7 @@
      document.getElementById("to").value = formData[0][entryNumber].email;
      document.getElementById("salutation").value = formData[0][entryNumber].short_name + ",";
      document.getElementById("subject").value = "Public Records Request " + today;
-     document.getElementById("outro").value = "Sincerely,";
+     document.getElementById("closing").value = "Sincerely,";
      constructMailto();
      
    };
@@ -112,7 +112,7 @@
      subject = encodeURIComponent(document.getElementById("subject").value);
      intro = document.getElementById("salutation").value;
      request = document.getElementById("request").value;
-     outro = document.getElementById("outro").value;
+     outro = document.getElementById("closing").value;
      body = encodeURIComponent(intro + "\r\n\r\n" + request + "\r\n\r\n" + outro);
      mailtoString = "mailto:" + to + "?subject=" + subject + "&body=" + body;
      
