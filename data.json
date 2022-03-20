@@ -1,6 +1,15 @@
 [
 	{
 		"category": "town",
+		"town": "Easthampton",
+		"organization": "Town Hall",
+		"position": "City Clerk",
+		"email": "publicrecords@easthamptonma.gov",
+		"full_name": "Barbara L. LaBombard",
+		"short_name": "Barbara" 
+	},
+	{
+		"category": "town",
 		"town": "Hatfield",
 		"organization": "Town Hall",
 		"position": "City Clerk",
