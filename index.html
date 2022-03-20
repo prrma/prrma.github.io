@@ -22,7 +22,7 @@
 
 </head>
  
-<body onload="constructMailto();">
+<body onload="constructMailto();constructSelect();">
  
  <div class="container">
    
@@ -34,7 +34,11 @@
      <hr>
      
   <form>
-     
+  
+  <div class="mb-3">
+    <select id="select-recipient" class="form-select"></select>
+  </div>
+    
   <div class="mb-3">
     <input type="email" class="form-control" id="to" value="jeffehobbs@gmail.com" oninput="constructMailto();">
   </div>
@@ -44,7 +48,7 @@
   </div>
 
   <div class="mb-3">
-      <textarea class="form-control" id="prefix" rows="3" oninput="constructMailto();">Hello,</textarea>
+      <textarea class="form-control" id="prefix" rows="3" oninput="constructMailto();">Dear,</textarea>
   </div>
     
   <div class="mb-3">
@@ -74,6 +78,19 @@
     });
    
    //console.log(formData);
+   
+   function constructSelect(){
+     
+     var selectElement = document.getElementById('select-recipient');
+     formData.forEach(entry => selectElement.add(new Option(entry.email)););
+     
+   };
+   
+   function constructBoilerplate(option){
+     
+     short_name = formData[option].short_name;   
+     
+   };
                                                                
    function constructMailto(){ 
 
