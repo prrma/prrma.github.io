@@ -64,9 +64,12 @@
    let formData = [];
    fetch('/data.json')
     .then(response => response.json())
-    .then(data => {formData.push(data)});
+    .then(data => {
+     formData.push(data);
+     console.log(data);
+    });
    
-   console.log(formData);
+   //console.log(formData);
                                                                
    function constructMailto(){ 
 
