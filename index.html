@@ -94,9 +94,10 @@
    function constructBoilerplate(){
      
      entryNumber = document.getElementById("select").value;
+     let today = new Date().toLocaleDateString()
      document.getElementById("to").value = formData[0][entryNumber].email;
      document.getElementById("intro").value = "Hello " + formData[0][entryNumber].short_name + ",";
-     document.getElementById("subject").value = "Public Records Request " + Date().toLocaleDateString();
+     document.getElementById("subject").value = "Public Records Request " + today;
      document.getElementById("outro").value = "Sincerely,";
      constructMailto();
      
