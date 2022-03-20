@@ -18,6 +18,15 @@
 		"short_name": "Pamela" 
 	},
 	{
+		"category": "town",
+		"town": "Northampton",
+		"organization": "City Council",
+		"position": "Administrative Assistant to the City Council",
+		"email": "ppowers@northamptonma.gov",
+		"full_name": "Laura Krutzler",
+		"short_name": "Laura" 
+	},
+	{
 		"category": "police",
 		"town": "Northampton",
 		"organization": "Police Department",
