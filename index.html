@@ -69,20 +69,10 @@
   
  <script>
    
-   let formData = [];
-   fetch('/data.json')
-    .then(response => response.json())
-    .then(data => {
-     formData.push(data);
-     console.log(data);
-    });
-   
-   //console.log(formData);
-   
-   function constructSelect(){
+   function constructSelect(data){
      
      var selectElement = document.getElementById('select-recipient');
-     formData.forEach(
+     data.forEach(
        entry => selectElement.add(new Option(entry.email))
      );
      
@@ -110,6 +100,16 @@
      
    };
    
+   let formData = [];
+   fetch('/data.json')
+    .then(response => response.json())
+    .then(data => {
+     formData.push(data);
+     console.log(data);
+     constructSelect(data);
+   });
+   
+   //console.log(formData);
   </script>
                                                                          
  </body>
