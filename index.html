@@ -93,6 +93,7 @@
      
      entryNumber = document.getElementById("select").value;
      document.getElementById("to").value = formData[0][entryNumber].email;
+     document.getElementById("intro").value = "Hello " + formData[0][entryNumber].short_name + ",";
      
    };
                                                                
@@ -103,7 +104,7 @@
      intro = document.getElementById("intro").value;
      request = document.getElementById("request").value;
      outro = document.getElementById("outro").value;
-     body = encodeURIComponent(intro + "\r\n" + request + "\r\n" + outro);
+     body = encodeURIComponent(intro + "\r\n\r\n" + request + "\r\n\r\n" + outro);
      mailtoString = "mailto:" + to + "?subject=" + subject + "&body=" + body;
      
      var mailto = document.getElementById("submitButton");
