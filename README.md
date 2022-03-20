@@ -1,4 +1,4 @@
 # prrma.github.io
-Public Records Request Helper
+Public Records Request Assistant
 
 https://prrma.github.io
