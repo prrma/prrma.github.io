@@ -34,41 +34,41 @@
      <h1 class="display-6">Public Records Request Assistant</h1>
      <hr>
      
-  <form class="form-floating">
+  <form>
   
-  <div class="mb-3">
+  <div class="form-floating mb-3">
     <label for="select" class="form-label text-muted">Town and Department</label>
     <select id="select" class="form-select" onchange="constructBoilerplate();">
       <option selected>Choose a town and department</option>
     </select>
   </div>
     
-  <div class="mb-3">
+  <div class="form-floating mb-3">
     <label for="to" class="form-label text-muted">To</label>
     <input type="email" class="form-control" id="to" value="" oninput="constructMailto();">
   </div>
      
-  <div class="mb-3">
+  <div class="form-floating mb-3">
     <label for="subject" class="form-label text-muted">Subject</label>
     <input type="email" class="form-control" id="subject" value="" oninput="constructMailto();">
   </div>
 
-  <div class="mb-3">
+  <div class="form-floating mb-3">
     <label for="salutation" class="form-label text-muted">Salutation</label>
       <textarea class="form-control form-control-sm" id="salutation" rows="7" oninput="constructMailto();"></textarea>
   </div>
     
-  <div class="mb-3">
+  <div class="form-floating mb-3">
     <label for="request" class="form-label text-muted">Request Body</label>
       <textarea class="form-control form-control-sm" id="request" rows="8" placeholder="(Put the nature of your request here)" oninput="constructMailto();"></textarea>
   </div>
 
-  <div class="mb-3">
+  <div class="form-floating mb-3">
     <label for="closing" class="form-label text-muted">Closing</label>
       <textarea class="form-control form-control-sm" id="closing" rows="10" oninput="constructMailto();"></textarea>
   </div>
 
-  <div class="mb-3">
+  <div class="form-floating mb-3">
     <label for="name" class="form-label text-muted">Your Name</label>
       <textarea class="form-control form-control-sm" id="name" rows="3" placeholder="(Put your name here)" oninput="constructMailto();"></textarea>
   </div>
