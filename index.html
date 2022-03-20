@@ -36,7 +36,7 @@
   <form>
   
   <div class="mb-3">
-    <select id="select-recipient" class="form-select"></select>
+    <select id="select" class="form-select"></select>
   </div>
     
   <div class="mb-3">
@@ -71,9 +71,13 @@
    
    function constructSelect(data){
      
-     var selectElement = document.getElementById('select-recipient');
+     var select = document.getElementById('select');
      data.forEach(
-       entry => selectElement.add(new Option(entry.email))
+       entry => {
+         option = document.createElement("option");
+         option.text = entry.email;
+         select.add(option);
+       }
      );
      
    };
