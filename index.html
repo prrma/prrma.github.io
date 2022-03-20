@@ -54,8 +54,8 @@
   </div>
 
   <div class="mb-3">
-    <label for="intro" class="form-label text-muted">Intro</label>
-      <textarea class="form-control" id="intro" rows="3" oninput="constructMailto();"></textarea>
+    <label for="salutation" class="form-label text-muted">Salutation</label>
+      <textarea class="form-control" id="salutation" rows="3" oninput="constructMailto();"></textarea>
   </div>
     
   <div class="mb-3">
@@ -99,7 +99,7 @@
      entryNumber = document.getElementById("select").value;
      let today = new Date().toLocaleDateString()
      document.getElementById("to").value = formData[0][entryNumber].email;
-     document.getElementById("intro").value = "Hello " + formData[0][entryNumber].short_name + ",";
+     document.getElementById("salutation").value = "Hello " + formData[0][entryNumber].short_name + ",";
      document.getElementById("subject").value = "Public Records Request " + today;
      document.getElementById("outro").value = "Sincerely,";
      constructMailto();
@@ -110,7 +110,7 @@
 
      to = document.getElementById("to").value;
      subject = encodeURIComponent(document.getElementById("subject").value);
-     intro = document.getElementById("intro").value;
+     intro = document.getElementById("salutation").value;
      request = document.getElementById("request").value;
      outro = document.getElementById("outro").value;
      body = encodeURIComponent(intro + "\r\n\r\n" + request + "\r\n\r\n" + outro);
