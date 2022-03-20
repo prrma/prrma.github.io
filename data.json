@@ -19,6 +19,15 @@
 	},
 	{
 		"category": "town",
+		"town": "Greenfield",
+		"organization": "Town Hall",
+		"position": "City Clerk",
+		"email": "clerks@greenfield-ma.gov",
+		"full_name": "Kathy Scott",
+		"short_name": "Kathy" 
+	},
+	{
+		"category": "town",
 		"town": "Hadley",
 		"organization": "Town Hall",
 		"position": "Town Clerk",
