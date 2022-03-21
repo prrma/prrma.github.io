@@ -73,12 +73,12 @@
       </div>
 
       <div class="form-floating mb-3">
-        <textarea class="form-control form-control-sm" id="name" rows="3" placeholder="(Put your name here)" oninput="constructMailto();"></textarea>
+        <textarea class="form-control form-control-sm" id="name" rows="3" placeholder="(Put your name here)" oninput="constructMailto();" title="Step 3" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your name and contact info here."></textarea>
         <label for="name" class="form-label text-muted">Your Name</label>
       </div>
 
       <div class="d-grid gap-2">
-        <a id="submitButton" href="" class="btn btn-primary">Compose email <i class="bi bi-send-check"></i></a>
+        <a id="submitButton" href="" class="btn btn-primary" title="Step 4" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Send the email via your email client.">Compose email <i class="bi bi-send-check"></i></a>
       </div>
 
       </form>
@@ -112,8 +112,8 @@
      document.getElementById("subject").value = "Public Records Request " + today;
      document.getElementById("closing").value = "I recognize that you may charge reasonable costs for copies, as well as for personnel time needed to comply with this request. I am fine with receiving either hard copies or .pdf versions of the requested information, although for accessibility reasons the original form of the documentation (text, csv, excel, etc.) is always preferable.\r\n\r\nThank you for your time and attention to this matter.\r\n\r\nSincerely,";
      constructMailto();
-     popoverStep1.hide();
      
+     popoverStep1.hide();
      var popoverContainer = document.getElementById('request');
      var popoverStep2 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
      popoverStep2.show();
@@ -137,6 +137,41 @@
      
    };
    
+   function step1(){
+     
+     var popoverContainer = document.getElementById('select');
+     var popoverStep1 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
+     popoverStep1.show();
+     
+   };
+   
+   function step2(){
+     
+     popoverStep1.hide();
+     var popoverContainer = document.getElementById('request');
+     var popoverStep2 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
+     popoverStep2.show();
+     
+   };
+   
+   function step3(){
+     
+     popoverStep2.hide();
+     var popoverContainer = document.getElementById('name');
+     var popoverStep3 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
+     popoverStep3.show();
+     
+   };
+   
+   function step4(){ 
+     
+     popoverStep3.hide();
+     var popoverContainer = document.getElementById('submitButton');
+     var popoverStep4 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
+     popoverStep4.show();
+     
+   };
+   
    let formData = [];
    fetch('/data.json')
     .then(response => response.json())
@@ -146,9 +181,7 @@
      constructSelect(data);
    });
    
-   var popoverContainer = document.getElementById('select');
-   var popoverStep1 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
-   popoverStep1.show();
+   step1();
    
    //console.log(formData);
   </script>
