@@ -41,7 +41,7 @@
       <form>
 
       <div class="form-floating mb-3">
-        <select id="select" class="form-select" onchange="constructBoilerplate();">
+        <select id="select" class="form-select" onchange="constructBoilerplate();" data-bs-toggle="popover" title="Step 1" data-bs-content="Select the town and department that can fulfill your request.">
           <option selected>Choose a town and department</option>
         </select>
         <label for="select" class="form-label text-muted">Town and Department</label>
@@ -94,12 +94,15 @@
      var select = document.getElementById('select');
      data.forEach(
        (entry,index) => {
-         option = document.createElement("option");
+         option = document.createElement('option');
          option.text = entry.town + " " + entry.organization;
          option.value = index;
          select.add(option);
        }
      );
+     
+     var popoverContainer = document.getElementById('select')
+     var popover = new bootstrap.Popover(popoverContainer, {trigger: 'focus'})
      
    };
    
