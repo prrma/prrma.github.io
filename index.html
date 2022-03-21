@@ -63,7 +63,7 @@
       </div>
 
       <div class="form-floating mb-3">
-        <textarea class="form-control form-control-sm" id="request" rows="8" placeholder="(Put the nature of your request here)" oninput="constructMailto();step2();" title="Step 2" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Place the text of your request in this field."></textarea>
+        <textarea class="form-control form-control-sm" id="request" rows="8" placeholder="(Put the nature of your request here)" oninput="constructMailto();" title="Step 2" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Place the text of your request in this field."></textarea>
         <label for="request" class="form-label text-muted">Request Body</label>
       </div>
 
@@ -73,12 +73,12 @@
       </div>
 
       <div class="form-floating mb-3">
-        <textarea class="form-control form-control-sm" id="name" rows="3" placeholder="(Put your name here)" oninput="constructMailto();step3();" title="Step 3" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your name and contact info here."></textarea>
+        <textarea class="form-control form-control-sm" id="name" rows="3" placeholder="(Put your name here)" oninput="constructMailto();" title="Step 3" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your name and contact info here."></textarea>
         <label for="name" class="form-label text-muted">Your Name</label>
       </div>
 
       <div class="d-grid gap-2">
-        <a id="submitButton" onclick="step4();" href="" class="btn btn-primary" title="Step 4" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Send the email via your email client.">Compose email <i class="bi bi-send-check"></i></a>
+        <a id="submitButton" onclick="" href="" class="btn btn-primary" title="Step 4" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Send the email via your email client.">Compose email <i class="bi bi-send-check"></i></a>
       </div>
 
       </form>
@@ -112,7 +112,6 @@
      document.getElementById("subject").value = "Public Records Request " + today;
      document.getElementById("closing").value = "I recognize that you may charge reasonable costs for copies, as well as for personnel time needed to comply with this request. I am fine with receiving either hard copies or .pdf versions of the requested information, although for accessibility reasons the original form of the documentation (text, csv, excel, etc.) is always preferable.\r\n\r\nThank you for your time and attention to this matter.\r\n\r\nSincerely,";
      constructMailto();
-     step2();
      
    };
                                                                
@@ -182,8 +181,6 @@
      //console.log(data);
      constructSelect(data);
    });
-   
-   step1();
    
    //console.log(formData);
   </script>
