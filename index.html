@@ -147,6 +147,8 @@
    
    function step2(){
      
+     var popoverContainer = document.getElementById('select');
+     var popoverStep1 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
      popoverStep1.hide();
      var popoverContainer = document.getElementById('request');
      var popoverStep2 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
@@ -156,6 +158,8 @@
    
    function step3(){
      
+     var popoverContainer = document.getElementById('request');
+     var popoverStep2 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
      popoverStep2.hide();
      var popoverContainer = document.getElementById('name');
      var popoverStep3 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
@@ -165,6 +169,8 @@
    
    function step4(){ 
      
+     var popoverContainer = document.getElementById('name');
+     var popoverStep3 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
      popoverStep3.hide();
      var popoverContainer = document.getElementById('submitButton');
      var popoverStep4 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
