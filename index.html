@@ -100,10 +100,7 @@
          select.add(option);
        }
      );
-     
-     var popoverContainer = document.getElementById('select')
-     var popover = new bootstrap.Popover(popoverContainer, {trigger: 'focus'})
-     
+        
    };
    
    function constructBoilerplate(){
@@ -143,6 +140,9 @@
      //console.log(data);
      constructSelect(data);
    });
+   
+   var popoverContainer = document.getElementById('select')
+   var popover = new bootstrap.Popover(popoverContainer, {trigger: 'focus'})
    
    //console.log(formData);
   </script>
