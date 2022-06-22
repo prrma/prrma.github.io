@@ -121,7 +121,7 @@
      closing = document.getElementById("closing").value;
      name = document.getElementById("name").value;
      body = encodeURIComponent(salutation + "\r\n\r\n" + request + "\r\n\r\n" + closing + "\r\n\r\n" + name);
-     mailtoString = "mailto:" + email + "?subject=" + subject + "&body=" + body + "&bcc=" + bcc ;
+     mailtoString = "mailto:" + email + "?subject=" + subject + "&body=" + body + "&bcc=" + bcc.slice(0,-1);
      var mailto = document.getElementById("submitButton");
      mailto.href = mailtoString;
      //console.log(mailtoString);
