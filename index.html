@@ -110,7 +110,7 @@
      
      bcc = '';
      contactData.forEach(function(item){
-       bcc = bcc + item[2];
+       bcc = bcc + item[2] + ',';
      });
      email = document.getElementById("email").value;
      subject = encodeURIComponent(document.getElementById("subject").value);
@@ -126,8 +126,7 @@
      
    };
    
-   
-   // pull contact data from Google Doc
+   // init form, pull contact data from Google Doc, build boilerplate
    var contactData;
    url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_9wwBuJszcT-Evgh-fDZRGU_GLq4oJQai9t8nIKSPM9ZOxLIDsFKTiblYAtgE1NIo4ebrryuskkdi/pub?gid=0&single=true&output=csv'
    Papa.parse(url, {
@@ -140,8 +139,6 @@
        constructBoilerplate();
      }
    });
-   
-
    
   </script>
                                                                          
