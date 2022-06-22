@@ -48,17 +48,17 @@
       <form>
 
       <div class="form-floating mb-3">
-        <textarea class="form-control form-control-sm" id="name" rows="3" placeholder="(Put your name here)" oninput="constructMailto();" title="Step 3" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your name here."></textarea>
+        <input type="text" class="form-control" id="name"  oninput="constructMailto();" title="Step 1" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your name here."></textarea>
         <label for="name" class="form-label text-muted">Your Name</label>
       </div>
         
       <div class="form-floating mb-3">
-        <textarea class="form-control form-control-sm" id="email" rows="3" placeholder="(Put your email here)" oninput="constructMailto();" title="Step 4" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your email address here."></textarea>
+        <input type="text" class="form-control" id="email" oninput="constructMailto();" title="Step 2" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your email address here."></textarea>
         <label for="name" class="form-label text-muted">Your Email</label>
       </div>
         
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="subject" value="" placeholder=" " oninput="constructMailto();">
+        <input type="text" class="form-control" id="subject" value="" oninput="constructMailto();">
         <label for="subject" class="form-label text-muted">Subject</label>
       </div>
 
@@ -68,7 +68,7 @@
       </div>
 
       <div class="form-floating mb-3">
-        <textarea class="form-control form-control-sm" id="request" rows="8" placeholder="(Put the nature of your request here)" oninput="constructMailto();" title="Step 2" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Place the text of your request in this field."></textarea>
+        <textarea class="form-control form-control-sm" id="request" rows="8" oninput="constructMailto();" title="Step 3" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Place the text of your request in this field."></textarea>
         <label for="request" class="form-label text-muted">Request Body</label>
       </div>
 
