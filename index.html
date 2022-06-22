@@ -46,6 +46,16 @@
       <form>
 
       <div class="form-floating mb-3">
+        <textarea class="form-control form-control-sm" id="name" rows="3" placeholder="(Put your name here)" oninput="constructMailto();" title="Step 3" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your name here."></textarea>
+        <label for="name" class="form-label text-muted">Your Name</label>
+      </div>
+        
+      <div class="form-floating mb-3">
+        <textarea class="form-control form-control-sm" id="email" rows="3" placeholder="(Put your email here)" oninput="constructMailto();" title="Step 4" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your email address here."></textarea>
+        <label for="name" class="form-label text-muted">Your Email</label>
+      </div>
+        
+      <div class="form-floating mb-3">
         <input type="text" class="form-control" id="subject" value="" placeholder=" " oninput="constructMailto();">
         <label for="subject" class="form-label text-muted">Subject</label>
       </div>
@@ -63,16 +73,6 @@
       <div class="form-floating mb-3">
         <textarea class="form-control form-control-sm" id="closing" rows="10" placeholder=" " oninput="constructMailto();"></textarea>
         <label for="closing" class="form-label text-muted">Closing</label>
-      </div>
-
-      <div class="form-floating mb-3">
-        <textarea class="form-control form-control-sm" id="name" rows="3" placeholder="(Put your name here)" oninput="constructMailto();" title="Step 3" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your name here."></textarea>
-        <label for="name" class="form-label text-muted">Your Name</label>
-      </div>
-        
-      <div class="form-floating mb-3">
-        <textarea class="form-control form-control-sm" id="email" rows="3" placeholder="(Put your email here)" oninput="constructMailto();" title="Step 4" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your email address here."></textarea>
-        <label for="name" class="form-label text-muted">Your Email</label>
       </div>
 
       <div class="d-grid gap-2">
@@ -139,6 +139,7 @@
      }
    });
    
+   // build the boilerplate text in the form
    constructBoilerplate();
    
   </script>
