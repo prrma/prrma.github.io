@@ -109,9 +109,9 @@
    function constructMailto(){
      
      bcc = '';
-     for (const record in contactData) {
-       bcc = bcc + contactData.record[2] + ',';
-     };
+     contactData.forEach(function(item){
+       bcc = bcc + item[2];
+     });
      email = document.getElementById("email").value;
      subject = encodeURIComponent(document.getElementById("subject").value);
      salutation = document.getElementById("salutation").value;
