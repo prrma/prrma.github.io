@@ -98,7 +98,6 @@
       
    function constructBoilerplate(){
      
-     entryNumber = document.getElementById("select").value;
      let today = new Date().toLocaleDateString()
      document.getElementById("salutation").value = formData[entryNumber].salutation + ",\r\n\r\nI believe you are the right person to address this email to, but if I am wrong please forward to the appropriate Public Records Officer for the " + formData[entryNumber].town + " " + formData[entryNumber].organization + ".\r\n\r\nI am writing with a request under the Massachusetts Public Records Law (M. G. L. Chapter 66, Section 10). The Public Records Law requires you to provide me with a written response within 10 business days. If you cannot comply with my request, you are statutorily required to provide an explanation in writing. I am requesting that I be provided a copy of the following records:";
      document.getElementById("subject").value = "Public Records Request " + today;
@@ -139,6 +138,8 @@
        contactData = results.data;
      }
    });
+   
+   constructBoilerplate();
    
   </script>
                                                                          
