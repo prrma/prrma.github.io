@@ -110,8 +110,8 @@
    function constructMailto(){
      
      bcc = '';
-     for (const record in contactData.data) {
-       bcc = bcc + contactData.data.record[2] + ',';
+     for (const record in contactData) {
+       bcc = bcc + contactData.record[2] + ',';
      };
      email = document.getElementById("email").value;
      subject = encodeURIComponent(document.getElementById("subject").value);
