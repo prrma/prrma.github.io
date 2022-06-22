@@ -109,7 +109,7 @@
    function constructMailto(){
      
      bcc = '';
-     contactData.forEach(function(item){
+     contactData.slice(1).forEach(function(item){
        bcc = bcc + item[2] + ',';
      });
      email = document.getElementById("email").value;
