@@ -112,7 +112,7 @@
      
      bcc = '';
      contactData.slice(1).forEach(function(item){
-       bcc = bcc + item[2] + ',';
+       bcc = bcc + item[0] + '<' + item[2] +'>,';
      });
      email = document.getElementById("email").value;
      subject = encodeURIComponent(document.getElementById("subject").value);
