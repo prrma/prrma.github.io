@@ -174,10 +174,11 @@
      
    };
    
-   let contactData;
+   var contactData;
    url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_9wwBuJszcT-Evgh-fDZRGU_GLq4oJQai9t8nIKSPM9ZOxLIDsFKTiblYAtgE1NIo4ebrryuskkdi/pub?gid=0&single=true&output=csv'
    Papa.parse(url, {
      download: true,
+     header: false,
      complete: function(results){
        console.log(results);
        contactData = results.data;
@@ -185,7 +186,6 @@
    });
    console.log(contactData);
    
-   //console.log(formData);
   </script>
                                                                          
  </body>
