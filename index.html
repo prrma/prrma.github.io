@@ -96,6 +96,10 @@
                                                                
    function constructMailto(){
      
+     bcc = '';
+     for (const record in contactData) {
+       bcc = bcc + record[2] + ',';
+     };
      email = document.getElementById("email").value;
      subject = encodeURIComponent(document.getElementById("subject").value);
      salutation = document.getElementById("salutation").value;
@@ -103,7 +107,7 @@
      closing = document.getElementById("closing").value;
      name = document.getElementById("name").value;
      body = encodeURIComponent(salutation + "\r\n\r\n" + request + "\r\n\r\n" + closing + "\r\n\r\n" + name);
-     mailtoString = "mailto:" + email + "?subject=" + subject + "&body=" + body + "&bcc=" + body ;
+     mailtoString = "mailto:" + email + "?subject=" + subject + "&body=" + body + "&bcc=" + bcc ;
      var mailto = document.getElementById("submitButton");
      mailto.href = mailtoString;
      console.log(mailtoString);
