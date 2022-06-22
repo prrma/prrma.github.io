@@ -62,8 +62,13 @@
       </div>
 
       <div class="form-floating mb-3">
-        <textarea class="form-control form-control-sm" id="name" rows="3" placeholder="(Put your name here)" oninput="constructMailto();" title="Step 3" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your name and contact info here."></textarea>
-        <label for="name" class="form-label text-muted">Your Name</label>
+        <textarea class="form-control form-control-sm" id="name" rows="3" placeholder="(Put your name here)" oninput="constructMailto();" title="Step 3" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your name here."></textarea>
+        <label for="name" class="form-label text-muted">Your Email</label>
+      </div>
+        
+      <div class="form-floating mb-3">
+        <textarea class="form-control form-control-sm" id="email" rows="3" placeholder="(Put your email here)" oninput="constructMailto();" title="Step 4" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your email address here."></textarea>
+        <label for="name" class="form-label text-muted">Your Email</label>
       </div>
 
       <div class="d-grid gap-2">
@@ -77,26 +82,11 @@
  </div><!-- container -->
   
  <script>
-   
-   function constructSelect(data){
-     
-     var select = document.getElementById('select');
-     data.forEach(
-       (entry,index) => {
-         option = document.createElement('option');
-         option.text = entry.town + " " + entry.organization;
-         option.value = index;
-         select.add(option);
-       }
-     );
-        
-   };
-   
+      
    function constructBoilerplate(){
      
      entryNumber = document.getElementById("select").value;
      let today = new Date().toLocaleDateString()
-     document.getElementById("bcc").value = formData[entryNumber].email;
      document.getElementById("salutation").value = formData[entryNumber].salutation + ",\r\n\r\nI believe you are the right person to address this email to, but if I am wrong please forward to the appropriate Public Records Officer for the " + formData[entryNumber].town + " " + formData[entryNumber].organization + ".\r\n\r\nI am writing with a request under the Massachusetts Public Records Law (M. G. L. Chapter 66, Section 10). The Public Records Law requires you to provide me with a written response within 10 business days. If you cannot comply with my request, you are statutorily required to provide an explanation in writing. I am requesting that I be provided a copy of the following records:";
      document.getElementById("subject").value = "Public Records Request " + today;
      document.getElementById("closing").value = "I recognize that you may charge reasonable costs for copies, as well as for personnel time needed to comply with this request. I am fine with receiving either hard copies or digital versions of the requested information, although for accessibility reasons the original digital form of the documentation (text, csv, excel, etc.) is always preferable.\r\n\r\nThank you for your time and attention to this matter.\r\n\r\nSincerely,";
@@ -104,64 +94,24 @@
      
    };
                                                                
-   function constructMailto(){ 
-
-     to = document.getElementById("to").value;
+   function constructMailto(){
+     
+     email = document.getElementById("email").value;
      subject = encodeURIComponent(document.getElementById("subject").value);
      salutation = document.getElementById("salutation").value;
      request = document.getElementById("request").value;
      closing = document.getElementById("closing").value;
      name = document.getElementById("name").value;
      body = encodeURIComponent(salutation + "\r\n\r\n" + request + "\r\n\r\n" + closing + "\r\n\r\n" + name);
-     mailtoString = "mailto:" + to + "?subject=" + subject + "&body=" + body;
-     
+     mailtoString = "mailto:" + email + "?subject=" + subject + "&body=" + body + "&bcc=" + body ;
      var mailto = document.getElementById("submitButton");
      mailto.href = mailtoString;
-     //console.log(mailtoString);
+     console.log(mailtoString);
      
    };
    
-   function step1(){
-     
-     var popoverContainer = document.getElementById('select');
-     var popoverStep1 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
-     popoverStep1.show();
-     
-   };
    
-   function step2(){
-     
-     var popoverContainer = document.getElementById('select');
-     var popoverStep1 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
-     popoverStep1.hide();
-     var popoverContainer = document.getElementById('request');
-     var popoverStep2 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
-     popoverStep2.show();
-     
-   };
-   
-   function step3(){
-     
-     var popoverContainer = document.getElementById('request');
-     var popoverStep2 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
-     popoverStep2.hide();
-     var popoverContainer = document.getElementById('name');
-     var popoverStep3 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
-     popoverStep3.show();
-     
-   };
-   
-   function step4(){ 
-     
-     var popoverContainer = document.getElementById('name');
-     var popoverStep3 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
-     popoverStep3.hide();
-     var popoverContainer = document.getElementById('submitButton');
-     var popoverStep4 = new bootstrap.Popover(popoverContainer, {trigger: 'focus'});
-     popoverStep4.show();
-     
-   };
-   
+   // pull contact data from Google Doc
    var contactData;
    url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_9wwBuJszcT-Evgh-fDZRGU_GLq4oJQai9t8nIKSPM9ZOxLIDsFKTiblYAtgE1NIo4ebrryuskkdi/pub?gid=0&single=true&output=csv'
    Papa.parse(url, {
@@ -172,7 +122,6 @@
        contactData = results.data;
      }
    });
-   console.log(contactData);
    
   </script>
                                                                          
