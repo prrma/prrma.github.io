@@ -53,7 +53,7 @@
         </small>
      </div>
      
-      <form>
+      <form id="entry-form">
 
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="name"  oninput="constructMailto();" title="Step 1" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Put your name here."></textarea>
@@ -154,17 +154,23 @@
      }
    });
    
-    grecaptcha.ready(function() {
-        grecaptcha.execute('6LejlJEgAAAAAPCV6r7V0wgf-MmsdedS5v-jrJZg', {action:'validate_user'})
-            .then(function(token) {
-            document.getElementById('g-recaptcha-response').value = token;
-            apiCall = 'https://gimr8bzv71.execute-api.us-east-1.amazonaws.com/production/verify?token=' + token;
-            fetch(apiCall)
-              .then(response => response.json())
-              .then(data => console.log(data));
+   var userScore;
+   grecaptcha.ready(function() {
+     grecaptcha.execute('6LejlJEgAAAAAPCV6r7V0wgf-MmsdedS5v-jrJZg', {action:'validate_user'})
+       .then(function(token) {
+         document.getElementById('g-recaptcha-response').value = token;
+         apiCall = 'https://gimr8bzv71.execute-api.us-east-1.amazonaws.com/production/verify?token=' + token;
+         fetch(apiCall)
+           .then(response => response.json())
+           .then(data => console.log(data); userScore = data.score;);
         });
     });
    
+   if (userScore <= 0.5){
+     form = document.getElementById("entry-form").id;
+     form.remove();
+   };
+     
   </script>
                                                                          
  </body>
