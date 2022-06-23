@@ -139,21 +139,7 @@
      
    };
    
-   // init form, pull contact data from Google Doc, build boilerplate
-   NProgress.start();
-   var contactData;
-   url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_9wwBuJszcT-Evgh-fDZRGU_GLq4oJQai9t8nIKSPM9ZOxLIDsFKTiblYAtgE1NIo4ebrryuskkdi/pub?gid=0&single=true&output=csv'
-   Papa.parse(url, {
-     download: true,
-     header: false,
-     complete: function(results){
-       //console.log(results);
-       contactData = results.data;
-       // build the boilerplate text in the form
-       constructBoilerplate();
-     }
-   });
-   
+   // check to see if user is real...
    grecaptcha.ready(function() {
      grecaptcha.execute('6LejlJEgAAAAAPCV6r7V0wgf-MmsdedS5v-jrJZg', {action:'validate_user'})
        .then(function(token) {
@@ -172,7 +158,19 @@
         });
     });
    
-     
+   // ...and if so, init form, pull contact data from Google Doc, build boilerplate
+   NProgress.start();
+   var contactData;
+   url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_9wwBuJszcT-Evgh-fDZRGU_GLq4oJQai9t8nIKSPM9ZOxLIDsFKTiblYAtgE1NIo4ebrryuskkdi/pub?gid=0&single=true&output=csv'
+   Papa.parse(url, {
+     download: true,
+     header: false,
+     complete: function(results){
+       contactData = results.data;
+       constructBoilerplate();
+     }
+   });
+
   </script>
                                                                          
  </body>
