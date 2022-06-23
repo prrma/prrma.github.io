@@ -154,7 +154,6 @@
      }
    });
    
-   var userScoreData;
    grecaptcha.ready(function() {
      grecaptcha.execute('6LejlJEgAAAAAPCV6r7V0wgf-MmsdedS5v-jrJZg', {action:'validate_user'})
        .then(function(token) {
@@ -162,15 +161,17 @@
          apiCall = 'https://gimr8bzv71.execute-api.us-east-1.amazonaws.com/production/verify?token=' + token;
          fetch(apiCall)
            .then(response => response.json())
-           .then(data => userScoreData);
+           .then(data => {
+              console.log(data)
+                if (data.score <= 0.5){
+                  form = document.getElementById("entry-form").id;
+                  form.remove();
+                  return;
+                }
+            });
         });
     });
    
-   console.log(userScoreData);
-   if (userScoreData.score <= 0.5){
-     form = document.getElementById("entry-form").id;
-     form.remove();
-   };
      
   </script>
                                                                          
