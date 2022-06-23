@@ -32,6 +32,7 @@
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
   <script src="https://www.google.com/recaptcha/api.js?render=6LejlJEgAAAAAPCV6r7V0wgf-MmsdedS5v-jrJZg"></script>
+  
 </head>
  
 <body>
@@ -140,6 +141,7 @@
    };
    
    // check to see if user is real...
+   NProgress.start();
    grecaptcha.ready(function() {
      grecaptcha.execute('6LejlJEgAAAAAPCV6r7V0wgf-MmsdedS5v-jrJZg', {action:'validate_user'})
        .then(function(token) {
@@ -159,7 +161,6 @@
     });
    
    // ...and if so, init form, pull contact data from Google Doc, build boilerplate
-   NProgress.start();
    var contactData;
    url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_9wwBuJszcT-Evgh-fDZRGU_GLq4oJQai9t8nIKSPM9ZOxLIDsFKTiblYAtgE1NIo4ebrryuskkdi/pub?gid=0&single=true&output=csv'
    Papa.parse(url, {
