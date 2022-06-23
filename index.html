@@ -139,6 +139,7 @@
    
    // init form, pull contact data from Google Doc, build boilerplate
    NProgress.start();
+   grecaptcha.execute('6LejlJEgAAAAAPCV6r7V0wgf-MmsdedS5v-jrJZg', { action: 'homepage' });
    var contactData;
    url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_9wwBuJszcT-Evgh-fDZRGU_GLq4oJQai9t8nIKSPM9ZOxLIDsFKTiblYAtgE1NIo4ebrryuskkdi/pub?gid=0&single=true&output=csv'
    Papa.parse(url, {
