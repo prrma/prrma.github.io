@@ -159,7 +159,7 @@
             .then(function(token) {
             document.getElementById('g-recaptcha-response').value = token;
             apiCall = 'https://gimr8bzv71.execute-api.us-east-1.amazonaws.com/production/verify?token=' + token;
-            fetch(apiCall, { mode: 'no-cors'})
+            fetch(apiCall)
               .then(response => response.json())
               .then(data => console.log(data));
         });
