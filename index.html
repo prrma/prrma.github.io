@@ -89,6 +89,8 @@
         <a id="submitButton" onclick="" href="" class="btn btn-primary" title="Step 4" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-content="Send the email via your email client.">Compose email <i class="bi bi-send-check"></i></a>
       </div>
 
+      <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+
       </form>
        
      </div><!-- column -->
@@ -139,7 +141,6 @@
    
    // init form, pull contact data from Google Doc, build boilerplate
    NProgress.start();
-   grecaptcha.execute('6LejlJEgAAAAAPCV6r7V0wgf-MmsdedS5v-jrJZg', { action: 'homepage' });
    var contactData;
    url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_9wwBuJszcT-Evgh-fDZRGU_GLq4oJQai9t8nIKSPM9ZOxLIDsFKTiblYAtgE1NIo4ebrryuskkdi/pub?gid=0&single=true&output=csv'
    Papa.parse(url, {
@@ -152,6 +153,16 @@
        constructBoilerplate();
      }
    });
+   
+    grecaptcha.ready(function() {
+    // do request for recaptcha token
+    // response is promise with passed token
+        grecaptcha.execute('6LejlJEgAAAAAPCV6r7V0wgf-MmsdedS5v-jrJZg', {action:'validate_user'})
+                  .then(function(token) {
+            // add token value to form
+            document.getElementById('g-recaptcha-response').value = token;
+        });
+    });
    
   </script>
                                                                          
