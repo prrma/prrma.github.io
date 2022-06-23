@@ -157,8 +157,11 @@
     grecaptcha.ready(function() {
         grecaptcha.execute('6LejlJEgAAAAAPCV6r7V0wgf-MmsdedS5v-jrJZg', {action:'validate_user'})
             .then(function(token) {
-            // add token value to form
             document.getElementById('g-recaptcha-response').value = token;
+            apiCall = 'https://d9jefxl3cg.execute-api.us-east-1.amazonaws.com/production/verify?token=' + token;
+            fetch(apiCall)
+              .then(response => response.json())
+              .then(data => console.log(data));
         });
     });
    
