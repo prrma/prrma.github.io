@@ -50,7 +50,7 @@
      <div class="alert alert-info alert-dismissible fade show" role="alert">
         <small>
           <strong><i class="bi bi-info-circle-fill"></i> How this works:</strong> 
-          Enter your name, your email address and your public records request. The assistant will compose an email to be sent via your local email client, addressed to the public records request offices of each town in Western Massachusetts. Each town office will be blind carbon copied, and will receive a separate email. You will be able to further edit the text, remove towns, and give a final review to the email within your local email client before you send.
+          Enter your name, your email address and your public records request. The assistant will compose an email to be sent via your local email client, addressed to the <a target='_blank' href='https://docs.google.com/spreadsheets/d/1Ejp9d5l4hAS3NqBUgc1g2XQ8dDBOa7nx6TqOcD4Qdlw/edit?usp=sharing'>public records request offices</a> of each town in Western Massachusetts. Each town office will be blind carbon copied, and will receive a separate email. You will be able to further edit the text, remove towns, and give a final review to the email within your local email client before you send.
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </small>
      </div>
@@ -124,7 +124,9 @@
      
      bcc = '';
      contactData.slice(1).forEach(function(item){
-       bcc = bcc + item[0] + ' PRR Office<' + item[3] +'>,';
+       if (item[3] !== 'n/a') {
+         bcc = bcc + item[0] + ' PRR Office<' + item[3] +'>,';
+       };
      });
      email = document.getElementById("email").value;
      subject = encodeURIComponent(document.getElementById("subject").value);
